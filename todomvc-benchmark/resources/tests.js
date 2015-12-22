@@ -190,7 +190,7 @@ Suites.push({
 Suites.push({
     name: 'Angular',
     url: 'todomvc/angularjs-perf/index.html',
-    version: '1.2.14',
+    version: '1.4.8',
     prepare: function (runner, contentWindow, contentDocument) {
         return runner.waitForElement('#new-todo').then(function (element) {
             element.focus();
@@ -217,7 +217,7 @@ Suites.push({
         new BenchmarkTestStep('DeletingAllItems', function (newTodo, contentWindow, contentDocument) {
             var deleteButtons = contentDocument.querySelectorAll('.destroy');
             for (var i = 0; i < deleteButtons.length; i++)
-                deleteButtons[i].click();
+                deleteButtons[0].click();
         })
     ]
 });
