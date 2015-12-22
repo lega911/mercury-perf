@@ -215,9 +215,8 @@ Suites.push({
                 checkboxes[i].click();
         }),
         new BenchmarkTestStep('DeletingAllItems', function (newTodo, contentWindow, contentDocument) {
-            var deleteButtons = contentDocument.querySelectorAll('.destroy');
-            for (var i = 0; i < deleteButtons.length; i++)
-                deleteButtons[0].click();
+            for (var i = 0; i < numberOfItemsToAdd; i++)
+                contentDocument.querySelectorAll('.destroy')[0].click();
         })
     ]
 });
