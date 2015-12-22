@@ -28,6 +28,17 @@ function formatTestName(suiteName, testName) {
 function createUIForSuites(suites, onstep, onrun) {
     var control = document.createElement('nav');
     var ol = document.createElement('ol');
+
+    var button = document.createElement('button');
+    button.textContent = 'Step';
+    button.onclick = onstep;
+    control.appendChild(button);
+
+    var button = runButton = document.createElement('button');
+    button.textContent = 'Run';
+    button.onclick = onrun;
+    control.appendChild(button);
+    
     var checkboxes = [];
     for (var suiteIndex = 0; suiteIndex < suites.length; suiteIndex++) {
         var suite = suites[suiteIndex];
@@ -63,16 +74,6 @@ function createUIForSuites(suites, onstep, onrun) {
     }
 
     control.appendChild(ol);
-
-    var button = document.createElement('button');
-    button.textContent = 'Step';
-    button.onclick = onstep;
-    control.appendChild(button);
-
-    var button = runButton = document.createElement('button');
-    button.textContent = 'Run';
-    button.onclick = onrun;
-    control.appendChild(button);
 
     return control;
 }
